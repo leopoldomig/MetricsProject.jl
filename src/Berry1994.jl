@@ -1,6 +1,5 @@
 # Monte Carlo Simulation of Berry 1994
 
-# Selecting the needed packages
 function Berry1994(R, repNum;
                      βo = 5.00,
                      βx = 2.00,
