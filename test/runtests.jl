@@ -14,5 +14,8 @@ using Random
     out = sdc(500, 5).comparison
     @test out.θhat_t1ev[5] ≈ 1.566535306145989
     @test out.θhat_normal[5] ≈ 1.331458650920062
+    # The estimatives must be invariant to mean utilities re-scaling
+    out2 = sdc(500, 5, μ = 10).comparison
+    @test out.θhat_normal[5] ≈ out2.θhat_normal[5]
 
 end
