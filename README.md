@@ -5,4 +5,4 @@
 
 This package contain my solution to the assignments of the the UBC course ECON565 - Market Structure and Business Behaviour taught by "Sam" Il Myoung Hwang.
 
-Actually contains the solution of 2 assignments: (1) Estimation of a discrete choice model where the unobservable preference shocks have iid T1EV/normal distribution; (2) Replication of the Monte Carlo simulations in Berry 1994.
+Currently contains the solution of 2 assignments: (1) Estimation of a discrete choice model where the unobservable preference shocks have iid T1EV/normal distribution; (2) Replication of the Monte Carlo simulations in Berry 1994.
