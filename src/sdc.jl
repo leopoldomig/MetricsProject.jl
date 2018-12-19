@@ -5,12 +5,6 @@ function sdc(N, numSch;
                      μ = 0,
                      seed = 0)
 
-#seed = 0
-#N=500; #number of students
-#numSch=5; #number of schools
-#γ    = 1.2;
-#σ    = sqrt((pi^2)/6.0) #I am fixing the variance of the normal to be equal of the T1EV(0,1)
-
 # Generating the data
 # Main parameters:
 Random.seed!(seed+1);
@@ -70,7 +64,7 @@ function dcobj_t1ev(x,choice,dist,N,numSch,menu)
 end
 
 #Now lets assume that  ϵ∼N(0,π^2/6)
-#In this case we have to simulate the distribution in order to get the likelihood function.
+#In this case we have to simulate the choices in order to get the likelihood function.
 function dcobj_normal(x,choice,dist,N,numSch, menu,seed)
     δ = [x[1:numSch-1];0.0];
     γ = x[numSch];
@@ -81,7 +75,7 @@ function dcobj_normal(x,choice,dist,N,numSch, menu,seed)
     numDraws=numSch*20;
     ϵsim = σ*randn(numDraws,numSch, N);
 
-    #Compute the simulated utilities and the choice for each draws
+    # Compute the simulated utilities and the choice for each draws
     # Note that here we need only the probability of the best option, the other
     # probabilities do not matter here
     simChoice = zeros(Int64,numDraws,1);
