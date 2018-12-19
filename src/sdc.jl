@@ -2,6 +2,7 @@
 function sdc(N, numSch;
                      γ = 1.2,
                      σ = sqrt((pi^2)/6.0),
+                     μ = 0,
                      seed = 0)
 
 #seed = 0
@@ -13,7 +14,7 @@ function sdc(N, numSch;
 # Generating the data
 # Main parameters:
 Random.seed!(seed+1);
-δ    = randn(numSch,1); #generating the parameter deltas (mean utility of each school)
+δ    = randn(numSch,1) .+ μ; #generating the parameter deltas (mean utility of each school)
 dist = abs.(randn(N,numSch)); #generating the observable distance
 
 # Draw the utilities
